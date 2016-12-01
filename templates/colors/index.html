@@ -1,9 +1,3 @@
-<h1>Index</h1>
-<p>You are viewing colors/index.html</p>
-<p>Your goal is to:</p>
-
-<ol>
-  <li>Display all the colors in colorsCtrl.colors, using ngRepeat</li>
-  <li>Link to each individual color show page, using button tags and ngHref</li>
-  <li>Style each button to with the corresponding color, using ngStyle</li>
-</ol>
+<div class="colors-table" ng-repeat="color in colorsCtrl.colors " ng-init="index = colorsCtrl.colors.indexOf(color);">
+        <div class="colorBlock" style="background: #{{color.hex}}"><a ng-href="/colors/{{index}}">{{color.name}}</a></div>
+</div>

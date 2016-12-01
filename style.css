@@ -1,0 +1,15 @@
+.colors-table{
+    margin-left: 8%;
+}
+
+.colorBlock{
+  text-align: center;
+  float:left;
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.container{
+  width: 100%;
+}

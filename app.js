@@ -18,6 +18,11 @@ function config(   $routeProvider,   $locationProvider  ) {
       controller: 'ColorsShowController',
       controllerAs: 'colorCtrl'
     })
+    .when('/color/hex/:hex', {
+      templateUrl: '/templates/colors/show.html',
+      controller: 'ColorsShowControllerHex',
+      controllerAs: 'colorCtrlHex'
+    });
 
   // using html5Mode means we don't have /#/colors in our URL
   $locationProvider.html5Mode({
@@ -37,8 +42,18 @@ function ColorsShowController(   $routeParams   ){
 
   console.log('$routeParams.index is', $routeParams.index);
 
-  vm.color = COLORS[33];
+  vm.color = COLORS[$routeParams.index];
 }
+
+ColorsShowControllerHex.$inject = ["$routeParams"];
+function ColorsShowControllerHex(   $routeParams   ){
+  var vm = this;
+
+  console.log('$routeParams.index is', $routeParams.hex);
+
+  vm.color = COLORS[$routeParams.index];
+}
+
 
 
 
